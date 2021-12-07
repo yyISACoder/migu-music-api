@@ -5,7 +5,7 @@ let routeString = `module.exports = {
 `;
 
 const blackSet = new Set(['index'])
-fs.readdirSync(path.join(__dirname, 'dist/routes')).forEach(file => {
+fs.readdirSync(path.join(__dirname, 'routes')).forEach(file => {
   const filename = file.replace(/\.js$/, '');
   if (!blackSet.has(filename)) {
     routeString += `  ${filename}: require('./routes/${filename}'),
@@ -15,4 +15,4 @@ fs.readdirSync(path.join(__dirname, 'dist/routes')).forEach(file => {
 routeString += `};
 `;
 
-fs.writeFileSync(path.join(__dirname, 'dist/routes.js'), routeString);
+fs.writeFileSync(path.join(__dirname, 'routes.js'), routeString);
