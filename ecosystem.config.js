@@ -17,7 +17,7 @@ module.exports = {
     production : {
       user : 'root',
       host : '47.97.202.238',
-      ref  : 'origin/master',
+      ref  : 'origin/main',
       repo : 'git@github.com:yyISACoder/migu-music-api.git',
       path : '/var/webApps/migu-music-api',
       'post-setup': "npm install && pm2 start ecosystem.config.js --env production",
